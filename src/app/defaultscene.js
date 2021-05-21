@@ -22,26 +22,25 @@ const ringsData = [
 
 ringsData.forEach((ringData, i) => {
   const ring = new Mesh(
-    new TorusBufferGeometry(1, 0.065, 64, 64),
+    new TorusBufferGeometry(0.5, 0.032, 64, 64),
     new MeshStandardMaterial({
       metalness: 0.5,
       roughness: 0.5,
       color: ringData.color,
     })
   );
-  ring.position.z -= 1;
+  // ring.position.z -= 10;
   ring.scale.set(ringData.scale, ringData.scale, ringData.scale);
 
   ring.Update = () => {
-    ring.rotateOnAxis(ringData.axis, 0.0033 * (i + 1));
+    ring.rotateOnAxis(ringData.axis, 0.0033 * (i * 2 + 1));
   };
   scene.add(ring);
+  // ring.position.z -= 1;
 });
 
 const light = new DirectionalLight(0xffffff, 3.5);
 light.position.set(0, 13, 3);
 scene.add(light);
-
-camera.position.z += 25;
 
 export { scene };

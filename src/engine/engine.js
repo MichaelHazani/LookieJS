@@ -20,11 +20,5 @@ export function loadScene(scene) {
   // DOM append
   document.querySelector(".app").appendChild(renderer.domElement);
 
-  window.addEventListener("resize", () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
-
   requestAnimationFrame(update);
 }
