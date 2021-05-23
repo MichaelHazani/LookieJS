@@ -1,7 +1,5 @@
 <h1 align="center"> LookieJS </h1>
-<h2 align="center"> A friendly framework for creating apps for [the Looking Glass](https://lookingglassfactory.com/) </h2>
-
-<h3 align="center">_Heavily based on [Sandcastle](https://github.com/PlutoVR/sandcastle), a similar framework for WebXR_</h3>
+<h2 align="center"> A friendly framework for creating apps for the Looking Glass </h2>
 
 ## Features
 
@@ -12,6 +10,8 @@
 - Designed for [The Looking Glass](https://lookingglassfactory.com/) using [Holoplay.JS](https://docs.lookingglassfactory.com/developer-tools/three/index)
 
 - Tiny project build sizes
+
+- Heavily influenced by [Sandcastle](https://github.com/PlutoVR/sandcastle), a similar framework for WebXR
 
 ---
 
