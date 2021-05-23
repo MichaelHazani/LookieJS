@@ -13,16 +13,19 @@
 
 - Tiny project build sizes
 
-- Heavily influenced by [Sandcastle](https://github.com/PlutoVR/sandcastle), a similar framework for WebXR
+- Heavily influenced by [Sandcastle](https://github.com/PlutoVR/sandcastle), a similarly built framework for WebXR
 
 ---
-
 ## Usage
+Run `npx create-lookiejs NAMEOFPROJECT`, where `NAMEOFPROJECT` is your desired project name.
 
-1. clone this repo
-2. `npm i` to install dependencies
-3. `npm start` to launch the dev server and open the default scene.
+This script will automatically:
 
+clone this repo into a new folder of that name
+install Lookie.JS's dependencies
+remove the .git repo
+launch the dev server and
+open the default scene (located at ./src/app/defaultScene.js) in your browser.
 ---
 
 ## Development & Building
