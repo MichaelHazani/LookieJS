@@ -16,7 +16,7 @@
     "holoplay": "^1.0.3",
     "inquirer": "^7.2.0",
     "speak-tts": "^2.0.8",
-    "three": "^0.102.1"
+    "three": "^0.128.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
