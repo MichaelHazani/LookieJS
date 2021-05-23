@@ -1,3 +1,3 @@
-import { Renderer } from "./vendor/holoplay/dist/holoplay.module";
+import { Renderer } from "./vendor/holoplay/lib/holoplay.module";
 
 export const renderer = new Renderer();
