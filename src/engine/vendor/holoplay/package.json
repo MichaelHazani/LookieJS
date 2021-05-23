@@ -1,0 +1,69 @@
+{
+  "_from": "holoplay",
+  "_id": "holoplay@1.0.3",
+  "_inBundle": false,
+  "_integrity": "sha512-r1sLLcO8/pSg1rb7051JSSVkWoLZddK/+3jXS677dgM0u3AwluoikDxTAbFvkVMj4OMbodHoMhoIaJLZUcWyHA==",
+  "_location": "/holoplay",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "holoplay",
+    "name": "holoplay",
+    "escapedName": "holoplay",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/holoplay/-/holoplay-1.0.3.tgz",
+  "_shasum": "c6e13989d9df37315231f50f4f7309d83568a0ee",
+  "_spec": "holoplay",
+  "_where": "C:\\dev\\art\\lookingglass\\LookieJS",
+  "author": {
+    "name": "Looking Glass Factory"
+  },
+  "bugs": {
+    "url": "https://github.com/Looking-Glass/HoloPlayJS_Issues/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@ungap/event-target": "^0.1.0",
+    "fullscreen-polyfill": "^1.0.2",
+    "holoplay-core": "0.0.8",
+    "three": "^0.102.1"
+  },
+  "deprecated": false,
+  "description": "A library for the Looking Glass 3D display that relies on three.js to show content in true 3D from the browser.",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "concurrently": "^5.1.0",
+    "rollup": "^2.1.0",
+    "terser": "^4.6.7"
+  },
+  "files": [
+    "dist",
+    "src",
+    "HoloPlay_JS_License.pdf",
+    "rollup.config.js"
+  ],
+  "homepage": "https://lookingglassfactory.com/devtools/holoplay-js-library",
+  "keywords": [
+    "holoplay",
+    "hologram",
+    "looking glass"
+  ],
+  "license": "SEE LICENSE IN HoloPlay_JS_License.pdf",
+  "main": "dist/holoplay.js",
+  "module": "dist/holoplay.module.js",
+  "name": "holoplay",
+  "scripts": {
+    "build": "rollup --config && terser dist/holoplay.js -m --output dist/holoplay.min.js",
+    "dev": "concurrently --names \"ROLLUP,HTTP\" -c \"bgBlue.bold,bgGreen.bold\" \"rollup -c -w -m inline\" \"http-server -c-1 -p 8080\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.3"
+}
