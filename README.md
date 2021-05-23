@@ -1,6 +1,8 @@
 <h1 align="center"> LookieJS </h1>
 <h2 align="center"> A friendly framework for creating apps for the Looking Glass </h2>
 
+![Alt Text](https://nevr.to/ext/lookiejs/lookie.gif)
+
 ## Features
 
 - Built on vanilla [threeJS](http://threejs.org/)
