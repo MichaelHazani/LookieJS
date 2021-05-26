@@ -721,9 +721,9 @@ function getDevices() {
       new Client(
         data => {
           if (data.devices.length == 0) {
-            alert(
-              "No Looking Glass detected. Please make sure your Looking Glass is plugged in."
-            );
+            // alert(
+            //   "No Looking Glass detected. Please make sure your Looking Glass is plugged in."
+            // );
           }
           resolve(data.devices);
         },
@@ -1477,25 +1477,25 @@ class FullscreenHelper {
       z-index: ${Number.MAX_SAFE_INTEGER};
     `;
 
-    window.addEventListener("click", () => {
-      console.log(localStorage.getItem("isFullScreen"));
+    // window.addEventListener("click", () => {
+    //   console.log(localStorage.getItem("isFullScreen"));
 
-      if (localStorage.getItem("isFullScreen") == "true") {
-        localStorage.setItem("isFullScreen", false);
-        if (document.exitFullscreen) {
-          document.exitFullscreen().catch(() => {});
-        } else if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-        }
-      } else {
-        this.renderer.domElement.requestFullscreen();
-        localStorage.setItem("isFullScreen", true);
-      }
-    });
+    //   if (localStorage.getItem("isFullScreen") == "true") {
+    //     localStorage.setItem("isFullScreen", false);
+    //     if (document.exitFullscreen) {
+    //       document.exitFullscreen().catch(() => {});
+    //     } else if (document.webkitExitFullscreen) {
+    //       document.webkitExitFullscreen();
+    //     } else if (document.mozCancelFullScreen) {
+    //       document.mozCancelFullScreen();
+    //     } else if (document.msExitFullscreen) {
+    //       document.msExitFullscreen();
+    //     }
+    //   } else {
+    //     this.renderer.domElement.requestFullscreen();
+    //     localStorage.setItem("isFullScreen", true);
+    //   }
+    // });
     return fullscreenButton;
   }
 }

@@ -52,18 +52,24 @@ class EngineEditorCamera extends Object3D {
     const camState = JSON.parse(window.sessionStorage.getItem("camState"));
     if (camState == null) {
       this.CAM_SPEED = 0.015;
+      this.camera.position.set(0, 0, 0.5);
+      console.log(this.camera.position);
+
       this.setSessionData();
       return;
     }
 
     this.CAM_SPEED = "camSpeed" in camState ? camState["camSpeed"] : 0.015;
     this.camera.position.copy(
-      "cameraPosition" in camState ? camState["cameraPosition"] : new Vector3()
+      "cameraPosition" in camState
+        ? camState["cameraPosition"]
+        : new Vector3(0, 0, 0.5)
     );
+
     this.camera.applyQuaternion(
       "cameraQuaternion" in camState
         ? camState["cameraQuaternion"]
-        : new Vector3()
+        : new Quaternion()
     );
     // console.log("loading editor camera session data");
   }
