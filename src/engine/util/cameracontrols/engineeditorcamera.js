@@ -53,7 +53,6 @@ class EngineEditorCamera extends Object3D {
     if (camState == null) {
       this.CAM_SPEED = 0.015;
       this.camera.position.set(0, 0, 0.5);
-      console.log(this.camera.position);
 
       this.setSessionData();
       return;

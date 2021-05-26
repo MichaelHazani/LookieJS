@@ -1,20 +1,17 @@
-import { Vector3 } from "three";
-import { LKGcamera, GLcamera } from "./camera";
-import { LKGRenderer, GLRenderer } from "./renderer";
+import { LKGcamera } from "./camera";
+import { LKGRenderer } from "./renderer";
 import State from "./state";
 import EngineEditorCamera from "./util/cameracontrols/engineeditorcamera";
 export function loadScene(scene) {
   State.renderingLKG = false;
 
-  scene.add(new EngineEditorCamera(GLcamera, GLRenderer.domElement));
-
-  let selectedRenderer = GLRenderer;
-  let selectedCamera = GLcamera;
+  scene.add(new EngineEditorCamera(LKGcamera, LKGRenderer.domElement));
+  LKGRenderer.render2d = true;
 
   // main app render loop
   const update = () => {
     requestAnimationFrame(update);
-    selectedRenderer.render(scene, selectedCamera);
+    LKGRenderer.render(scene, LKGcamera);
 
     // TRAVERSE UPDATE METHODS IN SCENE OBJECTS
     scene.traverse(obj => {
@@ -23,7 +20,7 @@ export function loadScene(scene) {
   };
 
   // DOM append
-  document.querySelector(".app").appendChild(selectedRenderer.domElement);
+  document.querySelector(".app").appendChild(LKGRenderer.domElement);
 
   window.addEventListener("keydown", e => {
     if (e.key == "`") {
@@ -38,18 +35,16 @@ export function loadScene(scene) {
     document.querySelector(".app").removeChild(childs[0]);
 
     if (State.renderingLKG) {
-      selectedCamera = GLcamera;
-      selectedRenderer = GLRenderer;
+      LKGRenderer.render2d = true;
       toggleFullscreen(false);
       console.log("switching to ThreeJS Renderer");
     } else {
-      selectedCamera = LKGcamera;
-      selectedRenderer = LKGRenderer;
+      LKGRenderer.render2d = false;
       toggleFullscreen(true);
       console.log("switching to LKG Renderer");
     }
     State.renderingLKG = !State.renderingLKG;
-    document.querySelector(".app").appendChild(selectedRenderer.domElement);
+    document.querySelector(".app").appendChild(LKGRenderer.domElement);
   };
 
   const toggleFullscreen = shouldFullScreen => {
@@ -70,8 +65,7 @@ export function loadScene(scene) {
 
   window.addEventListener("resize", () => {
     if (State.renderingLKG) return;
-    selectedCamera.aspect = window.innerWidth / window.innerHeight;
-    selectedCamera.updateProjectionMatrix();
-    selectedRenderer.setSize(window.innerWidth, window.innerHeight);
+    LKGcamera.aspect = window.innerWidth / window.innerHeight;
+    LKGcamera.updateProjectionMatrix();
   });
 }

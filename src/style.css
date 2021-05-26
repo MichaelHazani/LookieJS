@@ -21,6 +21,15 @@ body {
   left: 0;
 }
 
+.inst {
+  width: 100%;
+  z-index: 9;
+  position: absolute;
+  bottom: 4em;
+  text-align: center;
+  color: white;
+}
+
 a {
   color: hotpink;
 }
